@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <title>Interactive Image Effect</title>
+    
+</head>
+<body>
+
+    
+    <div class="mouse circle"></div>
+
+    <!-- Option Nav -->
+    <div class="sidenav">
+
+        <!-- Choose image background -->
+        <div class="picker">
+            <div class="info">
+                <p>Choose image: </p>
+                <select name="img" id="img" onchange="bgChange()">
+                    <option value="bg1">Image 1</option>
+                    <option value="bg2">Image 2</option>
+                    <option value="bg3">Image 3</option>
+                    <option value="bg4">Image 4</option>
+                    <option value="bg5">Image 5</option>
+                    <option value="bg6">Image 6</option>
+                    <option value="bg7">Image 7</option>
+                    <option value="bg8">Image 8</option>
+                </select>
+            </div>
+        </div>
+
+        <!-- Brush Size -->
+        <div class="slider">
+            <div class="info">
+                <p>Brush size</p>
+                <p id="brushshow">32</p>
+            </div>
+            <input type="range" value="15" min="0" max="100" onchange="brushSizeChange()" id="brushsize" />
+        </div>
+
+        <!-- Sound volume -->
+        <div class="slider">
+            <div class="info">
+                <p> Sound volume</p>
+                <p id="volumeshow">32</p>
+            </div>
+            <input type="range" value="60" min="0" max="100" onchange="volumeChange()" id="volume" />
+        </div>
+
+        <!-- Check if use RGB effect -->
+        <div class="checkbox">
+            <div class="info">
+                <p>RGB effect </p>
+                <input type="checkbox" id="rgb" name="RGB effect" value="RGB" onchange="rgbChange()">
+            </div>
+        </div>
+
+        <!-- Randomize image -->
+        <div class="option">
+            <div class="info-option">
+                <p onclick="randomImage()">Random image</p>
+            </div>
+        </div>
+
+        <!-- Reset effect -->
+        <div class="option">
+            <div class="info-option">
+                <p onclick="resetEffect()">Reset effect</p>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- Import Pixi Js -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pixi.js/4.5.0/pixi.js" integrity="sha512-nc5DVGh3LCLVm+qQ1K6SI/udzAEfxTqG9cMNt4wNnVNdtPLBCOUFV6d7ufvUKCc6uIT89p+UD3pOM6HRx3X9Jw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+    
+    <audio id="audio">
+        <source src="assets/audio.mp3" type="audio/mpeg">
+      </audio>
+
+      <audio id="audio-rgb">
+        <source src="assets/audio-rgb.mp3" type="audio/mpeg">
+      </audio>
+    <canvas id="myCanvas"></canvas>
+
+    <!--- Add javascript file --->
+    <script src="main.js"></script>
+
+
+
+
+
+</body>
+</html>
